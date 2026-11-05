@@ -2,106 +2,112 @@
 
 # Dami
 
-**서버에서 지워져도 남는 메일 보관함**
+**Your mail stays, even after the server deletes it**
 
-IMAP · POP3 메일을 내 PC에 영구 보관하는 Windows 프로그램입니다.
+A Windows app that keeps your IMAP and POP3 mail on your own PC, permanently.
 
-[**최신 버전 다운로드**](https://github.com/gaurilabs/dami/releases/latest)
+[**Download the latest version**](https://github.com/gaurilabs/dami/releases/latest)
 
 </div>
 
-![Dami 메일 화면](docs/images/main-dark.png)
+![Dami mail view](docs/images/main-dark.png)
 
-## 왜 Dami인가요?
+## Why Dami?
 
-메일함 용량이 차서 지운 메일, 서버 보관 기간이 지나 사라진 메일, 퇴사나 서비스 종료로 접근할 수 없게 된 메일은 다시 찾기 어렵습니다.
+Mail you deleted because your mailbox was full, mail that expired under a server retention policy, mail you lost access to when you left a job or a service shut down: all of it is hard to get back.
 
-Dami는 메일을 원본 그대로 내 PC에 쌓아 둡니다. **서버에서 메일이 지워져도 Dami에는 남고, Dami가 서버의 메일을 지우거나 바꾸는 일도 없습니다.**
+Dami keeps an exact copy of your mail on your PC. **Mail deleted from the server stays in Dami, and Dami never deletes or changes anything on the server.**
 
-## 주요 기능
+## Features
 
-### 지워져도 남습니다
+### Deleted mail stays
 
-서버에서 사라진 메일은 삭제하지 않고 `서버 삭제` 표시와 함께 계속 보관합니다. 계정마다 `서버에서 삭제됨` 폴더로 모아 볼 수 있습니다.
+Mail that disappears from the server is kept and marked `Server-deleted`. Each account has a `Deleted from server` folder that gathers it in one place.
 
-![서버에서 삭제된 메일 보기](docs/images/server-deleted.png)
+![Viewing mail deleted from the server](docs/images/server-deleted.png)
 
-### 서버는 읽기만 합니다
+### Read-only on the server
 
-- IMAP은 읽기 전용으로 접속하고, 메일을 읽음으로 표시하지도 않습니다.
-- POP3는 서버의 메일을 지우는 명령을 쓰지 않습니다.
-- 메일은 받은 원본 그대로 `.eml` 파일로 저장합니다.
+- IMAP connects in read-only mode and never marks mail as read.
+- POP3 never uses the command that deletes mail from the server.
+- Mail is saved exactly as received, as `.eml` files.
 
-### 빠른 전체 검색
+### Fast full-text search
 
-보관한 메일의 제목, 본문, 첨부 파일 이름을 계정과 기간에 상관없이 한 번에 찾습니다. 한글 검색을 지원합니다.
+Search subjects, message bodies, and attachment names across every account and date range at once. Partial-word matching works in any language, including Korean, Chinese, and Japanese.
 
-![메일 검색](docs/images/search.png)
+![Mail search](docs/images/search.png)
 
-### 예약 백업과 현황
+### Scheduled backups and status
 
-계정마다 주기를 정해 자동으로 백업합니다. 창을 닫아도 트레이에서 계속 동작하고, 전체 현황과 작업 기록을 한눈에 확인할 수 있습니다.
+Set a backup schedule for each account. Dami keeps running in the system tray after you close the window, and shows overall status and an activity log at a glance.
 
-![백업 현황](docs/images/dashboard.png)
+![Backup status](docs/images/dashboard.png)
 
-### 무결성 검사
+### Integrity checks
 
-보관한 파일이 그대로인지 SHA-256 해시로 검사합니다. 문제가 있어도 자동으로 고치거나 지우지 않으며, 사본에서 복원하거나 서버에서 다시 받는 조치를 직접 고를 수 있습니다.
+Dami verifies archived files against their SHA-256 hashes. It never fixes or deletes anything automatically: if a problem is found, you choose whether to restore from a copy or download the message from the server again.
 
-![무결성 검사](docs/images/integrity.png)
+![Integrity check](docs/images/integrity.png)
 
-### 가져오기와 내보내기
+### Import and export
 
-- **가져오기:** EML, MSG, MBOX, Thunderbird 로컬 폴더, Gmail Takeout, Outlook PST·OST
-- **내보내기:** EML(원본 그대로), MBOX
+- **Import:** EML, MSG, MBOX, Thunderbird local folders, Gmail Takeout, Outlook PST and OST
+- **Export:** EML (exact original), MBOX
 
-이전에 쓰던 메일 프로그램의 보관 파일도 하나의 보관소로 모을 수 있습니다.
+Bring the archives from your previous mail apps together in one place.
 
-### 그 밖의 기능
+### Available in 9 languages
 
-- 다크·라이트 테마
-- 메일 본문의 스크립트 항상 차단, 외부 이미지 기본 차단
-- 보관소를 다른 드라이브로 이동
-- 새 버전 자동 확인과 업데이트
+English, 한국어, 简体中文, 繁體中文, 日本語, Español, Deutsch, Français, Português (Brasil)
 
-![라이트 테마](docs/images/main-light.png)
+Dami follows your Windows language and falls back to English if that language isn't supported. To change it, go to **Settings → Display**. The new language applies when you save, and Dami restarts automatically.
 
-## 설치
+### And more
 
-1. [Releases](https://github.com/gaurilabs/dami/releases/latest)에서 `Dami_<버전>_win-x64_setup.exe`를 받습니다.
-2. 설치 파일을 실행합니다. 관리자 권한은 필요 없습니다.
-3. Dami를 실행하고 메일 계정을 추가합니다.
+- Dark and light themes
+- Scripts in mail are always blocked, and external images are blocked by default
+- Move your archive to another drive
+- Automatic update checks and updates
 
-> 설치 파일에 코드 서명이 없어 Windows SmartScreen 경고가 나올 수 있습니다. 그때는 **추가 정보 → 실행**을 누르면 됩니다.
+![Light theme](docs/images/main-light.png)
 
-v1.1.0부터는 새 버전이 나오면 앱에서 안내하고, 승인하면 자동으로 업데이트합니다.
+## Installation
 
-### 시스템 요구 사항
+1. Download `Dami_<version>_win-x64_setup.exe` from [Releases](https://github.com/gaurilabs/dami/releases/latest).
+2. Run the installer. Administrator rights aren't required.
+3. Start Dami and add your mail account.
 
-| 항목 | 내용 |
-|------|------|
-| 운영체제 | Windows 10 1809 이상, Windows 11 (x64) |
-| 런타임 | 설치 파일에 포함 |
-| 메일 본문 표시 | WebView2 런타임 (Windows 10·11에 대부분 기본 설치) |
+> The installer isn't code-signed, so Windows SmartScreen may show a warning. If it does, select **More info → Run anyway**.
 
-## 알아 두세요
+When a new version is available, Dami lets you know and updates itself once you approve.
 
-- **계정 연결:** 메일 서비스의 앱 비밀번호로 연결합니다. OAuth 로그인은 지원하지 않습니다.
-- **비밀번호:** Windows 사용자 계정에 묶인 DPAPI로 암호화해 저장합니다.
-- **데이터 위치:** `%LOCALAPPDATA%\Dami`에 저장하며, 설정에서 옮길 수 있습니다.
-- **제거해도 메일은 남습니다:** 프로그램을 제거해도 보관소와 설정은 지우지 않습니다.
-- **외부 연결:** 메일 서버와, 새 버전 확인을 위한 GitHub에만 연결합니다. 새 버전 자동 확인은 설정에서 끌 수 있습니다.
+### System requirements
 
-## 문의
+| Item | Requirement |
+|------|-------------|
+| Operating system | Windows 10 version 1809 or later, Windows 11 (x64) |
+| Runtime | Included in the installer |
+| Mail body display | WebView2 Runtime (already installed on most Windows 10 and 11 PCs) |
 
-버그 제보와 제안은 [Issues](https://github.com/gaurilabs/dami/issues)에 남겨 주세요.
+## Good to know
 
-## 라이선스
+- **Connecting accounts:** Use an app password from your mail provider. OAuth sign-in isn't supported.
+- **Passwords:** Encrypted with DPAPI, which ties them to your Windows user account.
+- **Data location:** Stored in `%LOCALAPPDATA%\Dami`. You can move it in Settings.
+- **Uninstalling keeps your mail:** Your archive and settings aren't removed when you uninstall.
+- **Network connections:** Dami connects only to your mail servers and to GitHub to check for new versions. You can turn off automatic update checks in Settings.
 
-Dami는 MIT 라이선스로 배포합니다. 이 저장소는 배포 전용이며 소스 코드는 공개하지 않습니다.
+## Support
+
+Please report bugs and share suggestions in [Issues](https://github.com/gaurilabs/dami/issues).
+
+## License
+
+Dami is distributed under the MIT License. This repository is for releases only; the source code is not public.
 
 ---
 
-<sub>화면의 계정, 인물, 메일은 모두 설명을 위한 가상 데이터입니다.</sub>
+<sub>All accounts, people, and messages shown in the screenshots are fictional.</sub>
 
 <sub>Copyright © 2026 GauriLab. All rights reserved.</sub>
